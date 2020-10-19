@@ -39,6 +39,60 @@ let student_data = [{
     }
 ]
 
+//Show and Hide form add student Button
+function show_add_student_form_button() {
+    let button = document.getElementById("add_student_button");
+
+    if (button.innerText == "Show Form Add New Student") {
+        button.innerText = "Hide Form Add New Student";
+    } else if (button.innerText == "Hide Form Add New Student") {
+        button.innerText = "Show Form Add New Student";
+    }
+}
+
+//Add Student
+function add_student() {
+    let NIM = document.getElementById("form_stud_id").value;
+    let fullName = document.getElementById("form_stud_name").value;
+
+    let gender = "";
+    if (document.getElementById("genderRadio1").checked) {
+        gender = "Male";
+    } else if (document.getElementById("genderRadio2").checked) {
+        gender = "Female";
+    }
+
+    let faculty = document.getElementById("form_stud_faculty").value;
+    let programOfStudy = document.getElementById("form_stud_programOfStudy");
+    programOfStudy = programOfStudy.options[programOfStudy.selectedIndex].text;
+
+    student_data.push({
+        "NIM": NIM,
+        "fullName": fullName,
+        "gender": gender,
+        "faculty": faculty,
+        "programOfStudy": programOfStudy
+    });
+
+    refresh_student_table_data();
+
+    //clear Field
+    document.getElementById("form_stud_id").value = "";
+    document.getElementById("form_stud_name").value = "";
+    document.getElementById("form_stud_faculty").selectedIndex = 0;
+    document.getElementById("form_stud_programOfStudy").selectedIndex = -1;
+}
+
+//Create List Option
+function createListOption(value, innerHtml) {
+    let newOption = document.createElement("option");
+
+    newOption.value = value;
+    newOption.innerHTML = innerHtml;
+
+    return newOption;
+}
+
 //Form List of Faculty and List of Program of Study
 function form_stud_faculty_onchange() {
     let form_stud_faculty_list = document.getElementById("form_stud_faculty");
@@ -96,39 +150,6 @@ function form_stud_faculty_onchange() {
     }
 }
 
-//Add Student
-function add_student() {
-    let NIM = document.getElementById("form_stud_id").value;
-    let fullName = document.getElementById("form_stud_name").value;
-
-    let gender = "";
-    if (document.getElementById("genderRadio1").checked) {
-        gender = "Male";
-    } else if (document.getElementById("genderRadio2").checked) {
-        gender = "Female";
-    }
-
-    let faculty = document.getElementById("form_stud_faculty").value;
-    let programOfStudy = document.getElementById("form_stud_programOfStudy");
-    programOfStudy = programOfStudy.options[programOfStudy.selectedIndex].text;
-
-    student_data.push({
-        "NIM": NIM,
-        "fullName": fullName,
-        "gender": gender,
-        "faculty": faculty,
-        "programOfStudy": programOfStudy
-    });
-
-    refresh_student_table_data();
-
-    //clear Field
-    document.getElementById("form_stud_id").value = "";
-    document.getElementById("form_stud_name").value = "";
-    document.getElementById("form_stud_faculty").selectedIndex = 0;
-    document.getElementById("form_stud_programOfStudy").selectedIndex = -1;
-}
-
 // Refresh Table
 function refresh_student_table_data() {
     //clear table every refresh
@@ -169,7 +190,6 @@ function refresh_student_table_data() {
         removeButton_cell.appendChild(removeButton);
     }
 }
-
 
 //Search by Student Name
 function search_student() {
@@ -301,26 +321,6 @@ function search_byProgramOfStudy() {
             removeButton_cell.appendChild(removeButton);
         }
     }
-}
-
-//Show and Hide form add student Button
-function show_add_student_form_button() {
-    let button = document.getElementById("add_student_button");
-
-    if (button.innerText == "Show Form Add New Student") {
-        button.innerText = "Hide Form Add New Student";
-    } else if (button.innerText == "Hide Form Add New Student") {
-        button.innerText = "Show Form Add New Student";
-    }
-}
-
-function createListOption(value, innerHtml) {
-    let newOption = document.createElement("option");
-
-    newOption.value = value;
-    newOption.innerHTML = innerHtml;
-
-    return newOption;
 }
 
 refresh_student_table_data();
