@@ -1,6 +1,7 @@
 let student_table_data = document.getElementById("student_table_data_body");
 let form_search_student = document.getElementById("form_search_student");
 
+// Default List of Students
 let student_data = [{
         "NIM": "105021810001",
         "fullName": "Rivol Ezio Loho",
@@ -38,6 +39,97 @@ let student_data = [{
     }
 ]
 
+//Form List of Faculty and List of Program of Study
+function form_stud_faculty_onchange() {
+    let form_stud_faculty_list = document.getElementById("form_stud_faculty");
+    let form_stud_programOfStudy_list = document.getElementById("form_stud_programOfStudy");
+
+    let selected_faculty = form_stud_faculty_list.options[form_stud_faculty_list.selectedIndex].text;
+
+    let data_programOfStudy = [{
+            "option": "Pascasarjana",
+            "list": ["Magister Manajemen", "Magister Teologi"]
+        },
+        {
+            "option": "Fakultas Filsafat",
+            "list": ["Ilmu Filsafat"]
+        },
+        {
+            "option": "Fakultas Keguruan dan Ilmu Pendidikan",
+            "list": ["Pendidikan Agama", "Pendidikan Bahasa Inggris",
+                "Pendidikan Ekonomi", "Pendidikan Luar Sekolah"
+            ]
+        },
+        {
+            "option": "Fakultas Ekonomi dan Bisnis",
+            "list": ["Akuntansi", "Manajemen"]
+        },
+        {
+            "option": "Fakultas Pertanian",
+            "list": ["Agroteknologi"]
+        },
+        {
+            "option": "Fakultas Ilmu Komputer",
+            "list": ["Informatika", "Sistem Informasi"]
+        },
+        {
+            "option": "Fakultas Keperawatan",
+            "list": ["Profesi Ners", "Keperawatan"]
+        },
+        {
+            "option": "Akademi Sekretari Manajemen Indonesia Klabat",
+            "list": ["Sekretari (D3)"]
+        }
+    ];
+
+    //clear field
+    while (form_stud_programOfStudy_list.children.length > 0) {
+        form_stud_programOfStudy_list.removeChild(form_stud_programOfStudy_list.children[0]);
+    }
+
+    for (let i = 0; i < data_programOfStudy.length; i++) {
+        if (selected_faculty == data_programOfStudy[i].option) {
+            for (let j = 0; j < data_programOfStudy[i].list.length; j++) {
+                form_stud_programOfStudy_list.appendChild(createListOption(i, data_programOfStudy[i].list[j]));
+            }
+        }
+    }
+}
+
+//Add Student
+function add_student() {
+    let NIM = document.getElementById("form_stud_id").value;
+    let fullName = document.getElementById("form_stud_name").value;
+
+    let gender = "";
+    if (document.getElementById("genderRadio1").checked) {
+        gender = "Male";
+    } else if (document.getElementById("genderRadio2").checked) {
+        gender = "Female";
+    }
+
+    let faculty = document.getElementById("form_stud_faculty").value;
+    let programOfStudy = document.getElementById("form_stud_programOfStudy");
+    programOfStudy = programOfStudy.options[programOfStudy.selectedIndex].text;
+
+    student_data.push({
+        "NIM": NIM,
+        "fullName": fullName,
+        "gender": gender,
+        "faculty": faculty,
+        "programOfStudy": programOfStudy
+    });
+
+    refresh_student_table_data();
+
+    //clear Field
+    document.getElementById("form_stud_id").value = "";
+    document.getElementById("form_stud_name").value = "";
+    document.getElementById("form_stud_faculty").selectedIndex = 0;
+    document.getElementById("form_stud_programOfStudy").selectedIndex = -1;
+}
+
+// Refresh Table
 function refresh_student_table_data() {
     //clear table every refresh
     while (student_table_data.children.length > 0) {
@@ -78,38 +170,6 @@ function refresh_student_table_data() {
     }
 }
 
-//Add Student
-function add_student() {
-    let NIM = document.getElementById("form_stud_id").value;
-    let fullName = document.getElementById("form_stud_name").value;
-
-    let gender = "";
-    if (document.getElementById("genderRadio1").checked) {
-        gender = "Male";
-    } else if (document.getElementById("genderRadio2").checked) {
-        gender = "Female";
-    }
-
-    let faculty = document.getElementById("form_stud_faculty").value;
-    let programOfStudy = document.getElementById("form_stud_programOfStudy");
-    programOfStudy = programOfStudy.options[programOfStudy.selectedIndex].text;
-
-    student_data.push({
-        "NIM": NIM,
-        "fullName": fullName,
-        "gender": gender,
-        "faculty": faculty,
-        "programOfStudy": programOfStudy
-    });
-    
-    refresh_student_table_data();
-
-    //clear Field
-    document.getElementById("form_stud_id").value = "";
-    document.getElementById("form_stud_name").value = "";
-    document.getElementById("form_stud_faculty").selectedIndex = 0;
-    document.getElementById("form_stud_programOfStudy").selectedIndex = -1;
-}
 
 //Search by Student Name
 function search_student() {
@@ -261,63 +321,6 @@ function createListOption(value, innerHtml) {
     newOption.innerHTML = innerHtml;
 
     return newOption;
-}
-
-//Form List Faculty and List Program of Study
-function form_stud_faculty_onchange() {
-    let form_stud_faculty_list = document.getElementById("form_stud_faculty");
-    let form_stud_programOfStudy_list = document.getElementById("form_stud_programOfStudy");
-
-    let selected_faculty = form_stud_faculty_list.options[form_stud_faculty_list.selectedIndex].text;
-
-    let data_programOfStudy = [{
-            "option": "Pascasarjana",
-            "list": ["Magister Manajemen", "Magiser Teologi"]
-        },
-        {
-            "option": "Fakultas Filsafat",
-            "list": ["Ilmu Filsafat"]
-        },
-        {
-            "option": "Fakultas Keguruan dan Ilmu Pendidikan",
-            "list": ["Pendidikan Agama", "Pendidikan Bahasa Inggris",
-                "Pendidikan Ekonomi", "Pendidikan Luar Sekolah"
-            ]
-        },
-        {
-            "option": "Fakultas Ekonomi dan Bisnis",
-            "list": ["Akuntansi", "Manajemen"]
-        },
-        {
-            "option": "Fakultas Pertanian",
-            "list": ["Agroteknologi"]
-        },
-        {
-            "option": "Fakultas Ilmu Komputer",
-            "list": ["Informatika", "Sistem Informasi"]
-        },
-        {
-            "option": "Fakultas Keperawatan",
-            "list": ["Profesi Ners", "Keperawatan"]
-        },
-        {
-            "option": "Akademi Sekretari Manajemen Indonesia Klabat",
-            "list": ["Sekretari (D3)"]
-        }
-    ];
-
-    //clear field
-    while (form_stud_programOfStudy_list.children.length > 0) {
-        form_stud_programOfStudy_list.removeChild(form_stud_programOfStudy_list.children[0]);
-    }
-
-    for (let i = 0; i < data_programOfStudy.length; i++) {
-        if (selected_faculty == data_programOfStudy[i].option) {
-            for (let j = 0; j < data_programOfStudy[i].list.length; j++) {
-                form_stud_programOfStudy_list.appendChild(createListOption(i, data_programOfStudy[i].list[j]));
-            }
-        }
-    }
 }
 
 refresh_student_table_data();
