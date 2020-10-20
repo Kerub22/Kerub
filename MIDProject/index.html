@@ -1,218 +1,327 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>StudentListApp</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
-        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
+    <head>
+        <meta charset="utf-8">
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>StudentListApp</title>
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+            integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
+            crossorigin="anonymous">
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
 
-<body>
-    <header class="main-header bg-success shadow-lg">
+    <body>
+        <header class="main-header bg-success shadow-lg">
+            <div class="container">
+                <nav class="navbar navbar-expand-md navbar-light">
+                    <a class="navbar-brand text-light" href="#">
+                        <svg
+                            width="2em"
+                            height="2em"
+                            viewbox="0 0 16 16"
+                            class="bi bi-people-fill"
+                            fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                fill-rule="evenodd"
+                                d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-5.784 6A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216zM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/>
+                        </svg>
+                        Student Management MiniApp</a>
+                    <button
+                        class="navbar-toggler"
+                        type="button"
+                        data-toggle="collapse"
+                        data-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mr-auto ">
+                            <li class="nav-item active">
+                                <a class="nav-link text-light" href="#">Home
+                                    <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-light" href="about.html">About</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
         <div class="container">
-            <nav class="navbar navbar-expand-md navbar-light">
-                <a class="navbar-brand text-light" href="#"><svg width="2em" height="2em" viewBox="0 0 16 16"
-                        class="bi bi-people-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd"
-                            d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-5.784 6A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216zM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z" />
-                    </svg> Student Management MiniApp</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse"
-                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+            <h1 class="display-4 border-bottom p-3">
+                <span class="text-success">Student Management</span>
+                <br/>
+                MiniApp</h1>
+            <div style="display: flex; flex-direction: row; justify-content: center;">
+                <div style="flex-grow: 1;">
+                    <h3>
+                        <svg
+                            width="1.5em"
+                            height="1.5em"
+                            viewbox="0 0 16 16"
+                            class="bi bi-person-plus-fill"
+                            fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                fill-rule="evenodd"
+                                d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm7.5-3a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z"/>
+                        </svg>
+                        Add Student
+                    </h3>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav mr-auto ">
-                        <li class="nav-item active">
-                            <a class="nav-link text-light" href="#">Home <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-light" href="about.html">About</a>
-                        </li>
-                    </ul>
+                    <!-- Button Show Add New Student -->
+                    <button
+                        type="button"
+                        class="btn btn-success shadow-sm"
+                        id="add_student_button"
+                        data-toggle="collapse"
+                        data-target="#student_form_collapsable"
+                        aria-expanded="false"
+                        aria-controls="student_form_collapsable"
+                        onclick="show_add_student_form_button()">
+                        Show Form Add New Student
+                    </button>
+
+                    <div class="collapse multi-collapse pt-4 mr-4" id="student_form_collapsable">
+                        <form>
+                            <!-- NIM => Form Add New Stundent -->
+                            <div class="form-group">
+                                <label for="form_stud_id">Student ID (NIM)</label>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="form_stud_id"
+                                    aria-describedby="form_stud_id_help"
+                                    placeholder="105021810001">
+                            </div>
+
+                            <!-- Name => Form Add New Stundent -->
+                            <div class="form-group">
+                                <label for="form_stud_name">Full Name</label>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="form_stud_name"
+                                    aria-describedby="form_stud_name_help"
+                                    placeholder="John Doe">
+                            </div>
+
+                            <!-- Gender => Form Add New Stundent -->
+                            <div class="form-group">
+                                <label>Gender:</label>
+                                <div class="form-check">
+                                    <input
+                                        class="form-check-input"
+                                        type="radio"
+                                        name="genderRadio"
+                                        id="genderRadio1"
+                                        value="Male"
+                                        checked="checked">
+                                    <label class="form-check-label" for="genderRadio1">
+                                        Male
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input
+                                        class="form-check-input"
+                                        type="radio"
+                                        name="genderRadio"
+                                        id="genderRadio2"
+                                        value="Female">
+                                    <label class="form-check-label" for="genderRadio2">
+                                        Female
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Faculty => Form Add New Stundent -->
+                            <div class="form-group">
+                                <p>
+                                    Faculty
+                                </p>
+                                <select
+                                    class="form-control"
+                                    id="form_stud_faculty"
+                                    onchange="form_stud_faculty_onchange()">
+                                    <option>--- SELECT FACULTY ---</option>
+                                    <option>Akademi Sekretari Manajemen Indonesia Klabat</option>
+                                    <option>Fakultas Ekonomi dan Bisnis</option>
+                                    <option>Fakultas Filsafat</option>
+                                    <option>Fakultas Ilmu Komputer</option>
+                                    <option>Fakultas Keguruan dan Ilmu Pendidikan</option>
+                                    <option>Fakultas Keperawatan</option>
+                                    <option>Fakultas Pertanian</option>
+                                    <option>Pascasarjana</option>
+                                </select>
+
+                                <!-- Program of Study => Form Add New Stundent -->
+                                <p>
+                                    <br/>Program of Study
+                                </p>
+                                <select class="form-control" id="form_stud_programOfStudy">
+                                    <option>--- SELECT PROGRAM OF STUDY ---</option>
+                                </select>
+                                <br/>
+                            </div>
+
+                            <button
+                                type="button"
+                                class="btn btn-success shadow-sm w-100"
+                                id="form_add_student_button"
+                                onclick="add_student()">
+                                Add Student
+                            </button>
+                        </form>
+                    </div>
                 </div>
-            </nav>
-        </div>
-    </header>
-    <div class="container">
-        <h1 class="display-4 border-bottom p-3"><span class="text-success">Student Management</span> <br /> MiniApp</h1>
-        <div style="display: flex; flex-direction: row; justify-content: center;">
-            <div style="flex-grow: 1;">
-                <h3><svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-person-plus-fill"
-                        fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd"
-                            d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm7.5-3a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z" />
-                    </svg> Add Student </h3>
+                <div style="width: em; flex-shrink: 0;">
+                    <h3>
+                        <svg
+                            width="1em"
+                            height="1.5em"
+                            viewbox="0 0 16 16"
+                            class="bi bi-list-ul"
+                            fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                fill-rule="evenodd"
+                                d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm-3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+                        </svg>
+                        Filter Student By
+                    </h3>
 
-                <!-- Button Show Add New Student -->
-                <button type="button" class="btn btn-success shadow-sm" id="add_student_button" data-toggle="collapse"
-                    data-target="#student_form_collapsable" aria-expanded="false"
-                    aria-controls="student_form_collapsable" onclick="show_add_student_form_button()"> Show Form Add New
-                    Student </button>
+                    <!-- Filter Student by Faculty -->
+                    <p>
+                        Faculty
+                    </p>
+                    <select class="form-control" id="selectByFaculty">
+                        <option>--- SELECT FACULTY ---</option>
+                        <option>Akademi Sekretari Manajemen Indonesia Klabat</option>
+                        <option>Fakultas Ekonomi dan Bisnis</option>
+                        <option>Fakultas Filsafat</option>
+                        <option>Fakultas Ilmu Komputer</option>
+                        <option>Fakultas Keguruan dan Ilmu Pendidikan</option>
+                        <option>Fakultas Keperawatan</option>
+                        <option>Fakultas Pertanian</option>
+                        <option>Pascasarjana</option>
+                    </select>
+                    <br/>
+                    <button
+                        type="button"
+                        class="btn btn-success shadow-sm w-100"
+                        id="show_student_button"
+                        onclick="search_byFaculty()">
+                        Show Student
+                    </button>
 
-                <div class="collapse multi-collapse pt-4 mr-4" id="student_form_collapsable">
-                    <form>
-                        <!-- NIM  => Form Add New Stundent -->
-                        <div class="form-group">
-                            <label for="form_stud_id">Student ID (NIM)</label>
-                            <input type="text" class="form-control" id="form_stud_id"
-                                aria-describedby="form_stud_id_help" placeholder="105021810001">
-                        </div>
-
-                        <!-- Name  => Form Add New Stundent -->
-                        <div class="form-group">
-                            <label for="form_stud_name">Full Name</label>
-                            <input type="text" class="form-control" id="form_stud_name"
-                                aria-describedby="form_stud_name_help" placeholder="John Doe">
-                        </div>
-
-                        <!-- Gender => Form Add New Stundent -->
-                        <div class="form-group">
-                            <label>Gender:</label>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="genderRadio" id="genderRadio1"
-                                    value="Male" checked>
-                                <label class="form-check-label" for="genderRadio1">
-                                    Male
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="genderRadio" id="genderRadio2"
-                                    value="Female">
-                                <label class="form-check-label" for="genderRadio2">
-                                    Female
-                                </label>
-                            </div>
-                        </div>
-
-                        <!-- Faculty => Form Add New Stundent -->
-                        <div class="form-group">
-                            <p> Faculty </p>
-                            <select class="form-control" id="form_stud_faculty" onchange="form_stud_faculty_onchange()">
-                                <option>--- SELECT FACULTY ---</option>
-                                <option>Akademi Sekretari Manajemen Indonesia Klabat</option>
-                                <option>Fakultas Ekonomi dan Bisnis</option>
-                                <option>Fakultas Filsafat</option>
-                                <option>Fakultas Ilmu Komputer</option>
-                                <option>Fakultas Keguruan dan Ilmu Pendidikan</option>
-                                <option>Fakultas Keperawatan</option>
-                                <option>Fakultas Pertanian</option>
-                                <option>Pascasarjana</option>
-                            </select>
-
-                            <!-- Program of Study => Form Add New Stundent  -->
-                            <p> <br />Program of Study </p>
-                            <select class="form-control" id="form_stud_programOfStudy">
-                                <option>--- SELECT PROGRAM OF STUDY ---</option>
-                            </select>
-                            <br />
-                        </div>
-
-                        <button type="button" class="btn btn-success shadow-sm w-100" id="form_add_student_button"
-                            onclick="add_student()"> Add Student </button>
-                    </form>
+                    <!-- Filter Student by Program of Study -->
+                    <p>
+                        <br/>Program of Study
+                    </p>
+                    <select class="form-control" id="selectByProgramOfStudy">
+                        <option>--- SELECT PROGRAM OF STUDY ---</option>
+                        <option>Agroteknologi</option>
+                        <option>Akuntansi</option>
+                        <option>Ilmu Filsafat</option>
+                        <option>Informatika</option>
+                        <option>Keperawatan</option>
+                        <option>Magister Manajemen</option>
+                        <option>Magister Teologi</option>
+                        <option>Manajemen</option>
+                        <option>Pendidikan Agama</option>
+                        <option>Pendidikan Bahasa Inggris</option>
+                        <option>Pendidikan Ekonomi</option>
+                        <option>Pendidikan Luar Sekolah</option>
+                        <option>Profesi Ners</option>
+                        <option>Sekretari (D3)</option>
+                        <option>Sistem Informasi</option>
+                    </select>
+                    <br/>
+                    <button
+                        type="button"
+                        class="btn btn btn-success shadow-sm w-100"
+                        id="show_student_button"
+                        onclick="search_byProgramOfStudy()">
+                        Show Student
+                    </button>
                 </div>
             </div>
-            <div style="width: em; flex-shrink: 0;">
-                <h3><svg width="1em" height="1.5em" viewBox="0 0 16 16" class="bi bi-list-ul" fill="currentColor"
+        </div>
+
+        <!-- Table List of Stundents And Search Student-->
+        <div class="container border-top mt-3">
+            <div
+                style="display: flex; justify-content: center; flex-direction: column; text-align: center;">
+                <h1 class="display-4 mt-4">
+                    <svg
+                        width="1em"
+                        height="1em"
+                        viewbox="0 0 16 16"
+                        class="bi bi-person-lines-fill"
+                        fill="currentColor"
                         xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd"
-                            d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm-3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
-                    </svg> Filter Student By </h3>
-
-                <!-- Filter Student by Faculty -->
-                <p> Faculty </p>
-                <select class="form-control" id="selectByFaculty">
-                    <option>--- SELECT FACULTY ---</option>
-                    <option>Akademi Sekretari Manajemen Indonesia Klabat</option>
-                    <option>Fakultas Ekonomi dan Bisnis</option>
-                    <option>Fakultas Filsafat</option>
-                    <option>Fakultas Ilmu Komputer</option>
-                    <option>Fakultas Keguruan dan Ilmu Pendidikan</option>
-                    <option>Fakultas Keperawatan</option>
-                    <option>Fakultas Pertanian</option>
-                    <option>Pascasarjana</option>
-                </select>
-                <br />
-                <button type="button" class="btn btn-success shadow-sm w-100" id="show_student_button"
-                    onclick="search_byFaculty()"> Show Student </button>
-
-                <!-- Filter Student by Program of Study -->
-                <p> <br />Program of Study </p>
-                <select class="form-control" id="selectByProgramOfStudy">
-                    <option>--- SELECT PROGRAM OF STUDY ---</option>
-                    <option>Agroteknologi</option>
-                    <option>Akuntansi</option>
-                    <option>Ilmu Filsafat</option>
-                    <option>Informatika</option>
-                    <option>Keperawatan</option>
-                    <option>Magister Manajemen</option>
-                    <option>Magister Teologi</option>
-                    <option>Manajemen</option>
-                    <option>Pendidikan Agama</option>
-                    <option>Pendidikan Bahasa Inggris</option>
-                    <option>Pendidikan Ekonomi</option>
-                    <option>Pendidikan Luar Sekolah</option>
-                    <option>Profesi Ners</option>
-                    <option>Sekretari (D3)</option>
-                    <option>Sistem Informasi</option>
-                </select>
-                <br />
-                <button type="button" class="btn btn btn-success shadow-sm w-100" id="show_student_button"
-                    onclick="search_byProgramOfStudy()"> Show Student </button>
+                        <path
+                            fill-rule="evenodd"
+                            d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm7 1.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm2 9a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5z"/>
+                    </svg>
+                    List of Students
+                </h1>
+                <input
+                    class="form-control"
+                    id="form_search_student"
+                    type="text"
+                    placeholder="Search students by name..."
+                    oninput="search_student()">
+                <table class="table table-striped mt-3" id="student_table_data">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Student ID (NIM)</th>
+                            <th scope="col">Full Name</th>
+                            <th scope="col">Gender</th>
+                            <th scope="col">Faculty</th>
+                            <th scope="col">Program of Study</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="student_table_data_body"></tbody>
+                </table>
             </div>
         </div>
-    </div>
 
-    <!-- Table List of Stundents And Search Student-->
-    <div class="container border-top mt-3">
-        <div style="display: flex; justify-content: center; flex-direction: column; text-align: center;">
-            <h1 class="display-4 mt-4"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-person-lines-fill"
-                    fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd"
-                        d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm7 1.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm2 9a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5z" />
-                </svg> List of Students </h1>
-            <input class="form-control" id="form_search_student" type="text" placeholder="Search students by name..."
-                oninput="search_student()">
-            <table class="table table-striped mt-3" id="student_table_data">
-                <thead class="thead-dark"> 
-                    <tr>
-                        <th scope="col">Student ID (NIM)</th>
-                        <th scope="col">Full Name</th>
-                        <th scope="col">Gender</th>
-                        <th scope="col">Faculty</th>
-                        <th scope="col">Program of Study</th>
-                        <th scope="col">Action</th>
-                    </tr>
-                </thead>
-                <tbody id="student_table_data_body">
-                </tbody>
-            </table>
-        </div>
-    </div>
+        <!-- Footer -->
+        <footer class="page-footer font-small bg-success">
 
-    <!-- Footer -->
-    <footer class="page-footer font-small bg-success">
+            <div class="text-center text-light py-3">
+                <p>
+                    Ricky Pasulatan © 2020
+                </p>
+            </div>
 
-        <div class="text-center text-light py-3">
-            <p> Ricky Pasulatan © 2020 </p>
-        </div>
+        </footer>
 
-    </footer>
+        <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+        <script
+            src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+            crossorigin="anonymous"></script>
 
-    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous">
-    </script>
-
-    <script src="main.js"></script>
-</body>
+        <script src="main.js"></script>
+    </body>
 
 </html>
