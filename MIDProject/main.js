@@ -50,6 +50,7 @@ function show_add_student_form_button() {
     }
 }
 
+
 //Add Student
 function add_student() {
     let NIM = document.getElementById("form_stud_id").value;
@@ -73,14 +74,19 @@ function add_student() {
         "faculty": faculty,
         "programOfStudy": programOfStudy
     });
-
+    
     refresh_student_table_data();
 
-    //clear Field
+    //Clear Form Field
     document.getElementById("form_stud_id").value = "";
     document.getElementById("form_stud_name").value = "";
     document.getElementById("form_stud_faculty").selectedIndex = 0;
-    document.getElementById("form_stud_programOfStudy").selectedIndex = -1;
+    {//Clear Form Field Program of Study
+        let form_stud_programOfStudy = document.getElementById("form_stud_programOfStudy");
+        form_stud_programOfStudy.textContent = ''; //kill all children element sadisticialy
+        form_stud_programOfStudy.appendChild((() => {let x = document.createElement("option"); x.innerText = "--- SELECT PROGRAM OF STUDY ---"; return x;})());
+        form_stud_programOfStudy.selectedIndex = 0;
+    }
 }
 
 //Create List Option
